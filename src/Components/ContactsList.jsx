@@ -10,7 +10,7 @@ const ContactList = () => {
   const [contacts, setContacts] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [isEndReached, setIsEndReached] = useState(false); // Add end reach flag
+  const [isEndReached, setIsEndReached] = useState(false);  
 
   useEffect(() => {
     loadContacts();
@@ -22,8 +22,7 @@ const ContactList = () => {
     setLoading(true);
 
     setTimeout(() => {
-      // Simulating network request
-      const newContacts = contactsData.slice(
+       const newContacts = contactsData.slice(
         (page - 1) * PAGE_SIZE,
         page * PAGE_SIZE,
       );
@@ -35,7 +34,7 @@ const ContactList = () => {
       }
 
       setLoading(false);
-    }, 1000); // Simulate delay for data fetch
+    }, 1000);  
   };
 
   const handleLoadMore = () => {
